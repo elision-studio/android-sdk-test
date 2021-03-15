@@ -24,7 +24,6 @@ class VendorBroadcastReceiver : EyezonBroadcastReceiver() {
     }
 
     override fun onConsoleEvent(eventName: String, event: String) {
-        println("RE:: onConsoleEvent")
-        println("RE:: $eventName -> $event")
+        println("RE:: onConsoleEvent $eventName -> $event")
     }
 }
