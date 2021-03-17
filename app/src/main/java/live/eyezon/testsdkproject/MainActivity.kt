@@ -28,16 +28,16 @@ class MainActivity : AppCompatActivity() {
         }
         btnOpenSdk.setOnClickListener {
             val data = SDKData(
-                etAutoSubmit.text.toString(),
-                etBusinessId.text.toString(),
-                etButtonId.text.toString(),
-                etLanguage.text.toString(),
-                etRegion.text.toString(),
-                etTarget.text.toString(),
-                etTitle.text.toString(),
-                etUserEmail.text.toString(),
-                etUserName.text.toString(),
-                etUserPhone.text.toString()
+                autoSubmit = etAutoSubmit.text.toString(),
+                businessId = etBusinessId.text.toString(),
+                buttonId = etButtonId.text.toString(),
+                language = etLanguage.text.toString(),
+                region = etRegion.text.toString(),
+                target = etTarget.text.toString(),
+                title = etTitle.text.toString(),
+                userEmail = etUserEmail.text.toString(),
+                userName = etUserName.text.toString(),
+                userPhone = etUserPhone.text.toString()
             )
             EyezonBusinessSDK.openButton(data)
         }
