@@ -10,12 +10,13 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private val predefinedData = SDKData(
-        "5d63fe246c2590002eecef83",
-        "5ec26f248107de3797f0807c",
-        "Mikhail Yarashevich",
-        "bigbottleapps@gmail.com",
-        "2982114490",
-        "Test from sdk ${System.currentTimeMillis()}"
+        businessId = "5d63fe246c2590002eecef83",
+        buttonId = "5ec26f248107de3797f0807c",
+        userName = "Mikhail Yarashevich",
+        userEmail = "bigbottleapps@gmail.com",
+        userPhone = "2982114490",
+        title = "Test from sdk ${System.currentTimeMillis()}",
+        eyezonRegion = "sandbox"
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +38,8 @@ class MainActivity : AppCompatActivity() {
                 title = etTitle.text.toString(),
                 userEmail = etUserEmail.text.toString(),
                 userName = etUserName.text.toString(),
-                userPhone = etUserPhone.text.toString()
+                userPhone = etUserPhone.text.toString(),
+                eyezonRegion = etEyezonRegion.text.toString()
             )
             EyezonBusinessSDK.openButton(data)
         }
