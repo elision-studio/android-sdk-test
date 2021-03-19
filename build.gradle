@@ -29,5 +29,5 @@ task clean(type: Delete) {
 }
 
 ext {
-    sdkVersion = '2.1.7'
+    sdkVersion = '2.1.8'
 }
