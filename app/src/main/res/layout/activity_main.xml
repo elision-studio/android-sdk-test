@@ -10,94 +10,42 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etAutoSubmit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="autoSubmit" />
+            android:hint="businessId"
+            android:id="@+id/businessId"/>
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etBusinessId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="buttonId"
+            android:id="@+id/buttonId"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="widgetUrl"
+            android:id="@+id/widgetUrl"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="header text"
+            android:id="@+id/headerText"/>
+
+        <Button
+            android:id="@+id/btnOpenSdkInputParams"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:hint="businessId" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etButtonId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="buttonId" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etLanguage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="language" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etRegion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="region" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etTarget"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="target" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="title" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etUserEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="userEmail" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etUserName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="userName" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etUserPhone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="userPhone" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etEyezonRegion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="eyezonRegion" />
+            android:text="SDK with input params" />
 
         <Button
             android:id="@+id/btnOpenSdkParams"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="SDK with params 1" />
-
-        <Button
-            android:id="@+id/btnOpenSdk"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="SDK" />
+            android:text="SDK with predefined params" />
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

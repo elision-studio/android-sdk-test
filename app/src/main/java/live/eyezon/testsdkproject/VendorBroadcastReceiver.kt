@@ -5,12 +5,6 @@ import com.witheyezon.sdk.tools.broadcast.EyezonBroadcastReceiver
 
 class VendorBroadcastReceiver : EyezonBroadcastReceiver() {
 
-    override fun onPushReceived(pushTitle: String, pushBody: String) {
-        println("RE:: onPushReceived")
-        println("RE:: pushTitle: $pushTitle")
-        println("RE:: pushBody: $pushBody")
-    }
-
     override fun onNewMessage(message: EyezonMessage) {
         println("RE:: onNewMessage: messageId=${message._id}")
     }

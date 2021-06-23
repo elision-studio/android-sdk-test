@@ -26,5 +26,25 @@
       <option name="name" value="maven" />
       <option name="url" value="https://dl.bintray.com/hero-in-heaven-dev/AndroidSDK" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven" />
+      <option name="name" value="maven" />
+      <option name="url" value="https://jcenter.bintray.com" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven3" />
+      <option name="name" value="maven3" />
+      <option name="url" value="https://eyezon.jfrog.io/artifactory/androidsdk/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven2" />
+      <option name="name" value="maven2" />
+      <option name="url" value="https://eyezon.jfrog.io/artifactory/androidsdk" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven2" />
+      <option name="name" value="maven2" />
+      <option name="url" value="https://eyezon.jfrog.io/artifactory/default-maven-local" />
+    </remote-repository>
   </component>
 </project>
