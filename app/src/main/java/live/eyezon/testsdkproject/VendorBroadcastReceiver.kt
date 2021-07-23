@@ -20,4 +20,9 @@ class VendorBroadcastReceiver : EyezonBroadcastReceiver() {
     override fun onConsoleEvent(eventName: String, event: String) {
         println("RE:: onConsoleEvent $eventName -> $event")
     }
+
+    override fun onPushReceived(title: String?, body: String?) {
+        println("RE:: pushTitle -> $title")
+        println("RE:: pushBody -> $body")
+    }
 }

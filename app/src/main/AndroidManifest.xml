@@ -19,8 +19,7 @@
 
         <receiver
             android:name=".VendorBroadcastReceiver"
-            android:enabled="true"
-            android:exported="true">
+            android:exported="false">
             <intent-filter>
                 <action android:name="action.eyezon.broadcast.push" />
                 <action android:name="action.eyezon.new.message" />

@@ -11,13 +11,18 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     companion object {
-        private const val MVIDEO_URL = "https://maxcriser.github.io"
+        private const val EYEZON_WIDGET_URL =
+            "https://storage.googleapis.com/eyezonfortest/test-widget/webview.html?eyezon"
 
         private const val EYEZON_BUSINESS_ID = "5d63fe246c2590002eecef83"
         private const val EYEZON_BUTTON_ID = "5ec26f248107de3797f0807c"
     }
 
-    private val predefinedData = SDKData(businessId = EYEZON_BUSINESS_ID)
+    private val predefinedData = SDKData(
+        businessId = EYEZON_BUSINESS_ID,
+        buttonId = EYEZON_BUTTON_ID,
+        widgetUrl = EYEZON_WIDGET_URL
+    )
 
     private val ui = SDKUi(
         statusBarColor = R.color.purple_700,
@@ -33,18 +38,15 @@ class MainActivity : AppCompatActivity() {
         btnOpenSdkParams.setOnClickListener {
             predefinedData.run {
                 this@MainActivity.businessId.setText(businessId)
-                buttonId?.run {
-                    this@MainActivity.buttonId.setText(this)
-                }
-                widgetUrl?.run {
-                    this@MainActivity.widgetUrl.setText(this)
-                }
+                this@MainActivity.buttonId.setText(buttonId)
+                this@MainActivity.widgetUrl.setText(widgetUrl)
+                this@MainActivity.headerText.setText("Sample text")
             }
         }
         btnOpenSdkInputParams.setOnClickListener {
             val widgetUrl = widgetUrl.text.toString()
 
-            val widgetToLoad = if(widgetUrl.isEmpty()) null else widgetUrl
+            val widgetToLoad = if (widgetUrl.isEmpty()) predefinedData.widgetUrl else widgetUrl
             val data = SDKData(
                 businessId = businessId.text.toString(),
                 buttonId = buttonId.text.toString(),
