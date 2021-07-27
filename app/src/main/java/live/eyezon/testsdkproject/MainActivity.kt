@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val EYEZON_WIDGET_URL =
-            "https://storage.googleapis.com/eyezonfortest/test-widget/webview.html?eyezon&putInCart=true&eyezonRegion=sandbox&language=ru&target=SKU-1&title=Samsung%20Television&name=Test&phone=%2B3801111111111&email=test@test.test&clientId=test123&region=Brest&autoSubmit=Message"
+            "https://storage.googleapis.com/eyezonfortest/test-widget/webview.html?eyezon&putInCart=true&eyezonRegion=sandbox&language=ru&target=SKU-1&title=Samsung%20Television&name=Test&phone=%2B3801111111111&email=test@test.test&clientId=test123&region=Brest"
 
         private const val EYEZON_BUSINESS_ID = "5d63fe246c2590002eecef83"
         private const val EYEZON_BUTTON_ID = "5ec26f248107de3797f0807c"
