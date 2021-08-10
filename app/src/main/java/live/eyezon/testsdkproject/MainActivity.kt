@@ -67,7 +67,10 @@ class MainActivity : AppCompatActivity() {
             unreadMessages = 0
         }
         intent?.getStringExtra(EXTRAS_DIALOG_ID)?.run {
-            val url = EYEZON_WIDGET_URL.plus("&").plus("dialogId=").plus(this)
+            val url = EYEZON_WIDGET_URL
+                .plus("&notificationType=push")
+                .plus("&dialogId=")
+                .plus(this)
             val data = predefinedData.copy(widgetUrl = url)
             EyezonBusinessSDK.openButton(data, ui.copy(toolbarText = "From Push"))
             unreadMessages = 0
