@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         }
         intent?.getStringExtra(EXTRAS_DIALOG_ID)?.run {
             val url = EYEZON_WIDGET_URL
-                .plus("&notificationType=push")
+                .plus("&notificationType=push&open=true")
                 .plus("&dialogId=")
                 .plus(this)
             val data = predefinedData.copy(widgetUrl = url)
