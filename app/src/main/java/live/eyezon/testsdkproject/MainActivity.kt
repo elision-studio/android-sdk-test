@@ -12,8 +12,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     companion object {
-        private const val EYEZON_WIDGET_URL =
-            "https://storage.googleapis.com/eyezonfortest/test-widget/webview.html?eyezon&putInCart=true&eyezonRegion=sandbox&language=ru&target=SKU-1&title=Samsung%20Television&name=Test&phone=%2B3801111111111&email=test@test.test&clientId=test123&region=Brest"
+        private const val BASE_URL =
+            "https://storage.googleapis.com/eyezonfortest/test-widget/webview.html?"
+        private const val EYEZON_WIDGET_URL = "${BASE_URL}eyezon"
 
         private const val EYEZON_BUSINESS_ID = "5d63fe246c2590002eecef83"
         private const val EYEZON_BUTTON_ID = "5ec26f248107de3797f0807c"
@@ -67,10 +68,8 @@ class MainActivity : AppCompatActivity() {
             unreadMessages = 0
         }
         intent?.getStringExtra(EXTRAS_DIALOG_ID)?.run {
-            val url = EYEZON_WIDGET_URL
-                .plus("&notificationType=push&open=true")
-                .plus("&dialogId=")
-                .plus(this)
+            val url = BASE_URL
+                .plus("&open=true&dialogId=$this&notificationType=push")
             val data = predefinedData.copy(widgetUrl = url)
             EyezonBusinessSDK.openButton(data, ui.copy(toolbarText = "From Push"))
             unreadMessages = 0
