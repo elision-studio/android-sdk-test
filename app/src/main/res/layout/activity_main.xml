@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
@@ -10,87 +11,62 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etAutoSubmit"
+            android:id="@+id/businessId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="autoSubmit" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etBusinessId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:hint="businessId" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etButtonId"
+            android:id="@+id/buttonId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:hint="buttonId" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etLanguage"
+            android:id="@+id/widgetUrl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="language" />
+            android:hint="widgetUrl" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etRegion"
+            android:id="@+id/headerText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="region" />
+            android:hint="header text" />
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etTarget"
+        <Button
+            android:id="@+id/btnOpenSdkInputParams"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:hint="target" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="title" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etUserEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="userEmail" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etUserName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="userName" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etUserPhone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="userPhone" />
+            android:text="SDK with input params" />
 
         <Button
             android:id="@+id/btnOpenSdkParams"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="SDK with params 1" />
+            android:text="SDK with predefined params" />
 
-        <Button
-            android:id="@+id/btnOpenSdk"
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="SDK" />
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvNewMessages"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="New Messages: 0"
+                tools:visibility="visible" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:id="@+id/btnOpenSdk"
+                android:text="Open"/>
+        </LinearLayout>
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

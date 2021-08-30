@@ -4,9 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TestSDKProject">
         <activity android:name=".MainActivity">
@@ -19,14 +17,22 @@
 
         <receiver
             android:name=".VendorBroadcastReceiver"
-            android:enabled="true"
-            android:exported="true">
+            android:exported="false">
             <intent-filter>
                 <action android:name="action.eyezon.broadcast.push" />
                 <action android:name="action.eyezon.new.message" />
                 <action android:name="action.eyezon.dialog.deleted" />
                 <action android:name="action.eyezon.dialog.returned" />
                 <action android:name="action.eyezon.console.event" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".PushBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="action.open.dialog" />
+                <action android:name="action.open.app" />
             </intent-filter>
         </receiver>
     </application>

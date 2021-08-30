@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "170799290170",
+    "project_id": "sample-eyezon-business-sdk",
+    "storage_bucket": "sample-eyezon-business-sdk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170799290170:android:c1052a3045a3cfc8056203",
+        "android_client_info": {
+          "package_name": "live.eyezon.testsdkproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "170799290170-6lo0m01scd61esm9d9nscq4v31ngt25e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_jKiIoY7wI0lDhfVZgM2Q-ncXYFmZfYo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "170799290170-6lo0m01scd61esm9d9nscq4v31ngt25e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
