@@ -1,10 +1,10 @@
 package live.eyezon.testsdkproject
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.witheyezon.sdk.domain.model.other.SDKData
 import com.witheyezon.sdk.domain.model.other.SDKUi
+import com.witheyezon.sdk.tools.broadcast.IBroadcastListener
 import com.witheyezon.sdk.tools.init.EyezonBusinessSDK
 import com.witheyezon.sdk.tools.init.ServerArea
 import kotlinx.android.synthetic.main.activity_main.*
@@ -40,7 +40,26 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         EyezonBusinessSDK.initSdk(application, ServerArea.SANDBOX)
-        EyezonBusinessSDK.initReceiver(VendorBroadcastReceiver::class.java.name)
+        EyezonBusinessSDK.addListener(object : IBroadcastListener {
+            override fun onConsoleEvent(eventName: String, event: String) {
+                println("RE:: onConsoleEvent $eventName -> $event")
+            }
+
+            override fun onPushReceived(title: String?, body: String?) {
+                println("RE:: pushTitle -> $title")
+                println("RE:: pushBody -> $body")
+                EyezonNotificationManager(this@MainActivity).sendNotification(
+                    title.orEmpty(), body.orEmpty()
+                )
+            }
+        })
+        btnClearFcmToken.setOnClickListener {
+            EyezonBusinessSDK.removeToken({
+                println("RE:: success")
+            }, { error ->
+                println("RE:: ${error.errorMessage}")
+            })
+        }
         btnOpenSdkParams.setOnClickListener {
             predefinedData.run {
                 this@MainActivity.businessId.setText(businessId)
@@ -77,20 +96,10 @@ class MainActivity : AppCompatActivity() {
         btnOpenSdk.setOnClickListener {
             EyezonBusinessSDK.openButton(predefinedData, ui.copy(toolbarText = "From New Message"))
         }
-        VendorBroadcastReceiver.setOnNewMessageListener {
-            unreadMessages += 1
-            tvNewMessages.text = "New Messages: $unreadMessages"
-        }
-        VendorBroadcastReceiver.setOnConsoleEventListener { eventName, event ->
-            if (eventName == "PUT_IN_CART_FROM_WIDGET") {
-                Toast.makeText(this, event, Toast.LENGTH_LONG).show()
-            }
-        }
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        VendorBroadcastReceiver.setOnNewMessageListener(null)
-        VendorBroadcastReceiver.setOnConsoleEventListener(null)
+        EyezonBusinessSDK.removeAllListeners()
     }
 }

@@ -16,18 +16,6 @@
         </activity>
 
         <receiver
-            android:name=".VendorBroadcastReceiver"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="action.eyezon.broadcast.push" />
-                <action android:name="action.eyezon.new.message" />
-                <action android:name="action.eyezon.dialog.deleted" />
-                <action android:name="action.eyezon.dialog.returned" />
-                <action android:name="action.eyezon.console.event" />
-            </intent-filter>
-        </receiver>
-
-        <receiver
             android:name=".PushBroadcastReceiver"
             android:exported="false">
             <intent-filter>
