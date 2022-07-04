@@ -53,13 +53,6 @@ class MainActivity : AppCompatActivity() {
                 )
             }
         })
-        btnClearFcmToken.setOnClickListener {
-            EyezonBusinessSDK.removeToken({
-                println("RE:: success")
-            }, { error ->
-                println("RE:: ${error.errorMessage}")
-            })
-        }
         btnOpenSdkParams.setOnClickListener {
             predefinedData.run {
                 this@MainActivity.businessId.setText(businessId)
