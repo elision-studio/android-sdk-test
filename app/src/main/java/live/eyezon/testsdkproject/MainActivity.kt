@@ -4,9 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.witheyezon.sdk.domain.model.other.SDKData
 import com.witheyezon.sdk.domain.model.other.SDKUi
-import com.witheyezon.sdk.tools.broadcast.IBroadcastListener
-import com.witheyezon.sdk.tools.init.EyezonBusinessSDK
-import com.witheyezon.sdk.tools.init.ServerArea
+import com.witheyezon.sdk.vendor.EyezonBusinessSDK
+import com.witheyezon.sdk.vendor.ISDKListener
+import com.witheyezon.sdk.vendor.ServerArea
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         EyezonBusinessSDK.initSdk(application, ServerArea.SANDBOX)
-        EyezonBusinessSDK.addListener(object : IBroadcastListener {
+        EyezonBusinessSDK.addListener(object : ISDKListener {
             override fun onConsoleEvent(eventName: String, event: String) {
                 println("RE:: onConsoleEvent $eventName -> $event")
             }
@@ -61,12 +61,10 @@ class MainActivity : AppCompatActivity() {
             })
         }
         btnOpenSdkParams.setOnClickListener {
-            predefinedData.run {
-                this@MainActivity.businessId.setText(businessId)
-                this@MainActivity.buttonId.setText(buttonId)
-                this@MainActivity.widgetUrl.setText(widgetUrl)
-                this@MainActivity.headerText.setText("Sample text")
-            }
+            businessId.setText(predefinedData.businessId)
+            buttonId.setText(predefinedData.buttonId)
+            widgetUrl.setText(predefinedData.widgetUrl)
+            headerText.setText("Sample text")
         }
         btnOpenSdkInputParams.setOnClickListener {
             val widgetUrl = widgetUrl.text.toString()
@@ -92,9 +90,6 @@ class MainActivity : AppCompatActivity() {
             val data = predefinedData.copy(widgetUrl = url)
             EyezonBusinessSDK.openButton(data, ui.copy(toolbarText = "From Push"))
             unreadMessages = 0
-        }
-        btnOpenSdk.setOnClickListener {
-            EyezonBusinessSDK.openButton(predefinedData, ui.copy(toolbarText = "From New Message"))
         }
     }
 
